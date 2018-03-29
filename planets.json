@@ -1,0 +1,61 @@
+{
+    "planets":
+    [
+        {
+            "name": "Mercury", 
+            "imageUrl": "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2015/whatsimporta.jpg:",
+            "description": "Mercury has water ice and organics.",
+            "isGasPlanet": false,
+            "numberOfMoons": 0
+        },
+        {
+            "name": "Venus", 
+            "imageUrl": "http://bryanmbrandenburg.com/wp-content/uploads/2013/01/planet-venus-by-bryan-brandenburg-900x900.jpg",
+            "description": "Venus is the hottest world in the solar system.",
+            "isGasPlanet": false,
+            "numberOfMoons": 0
+        },
+        {
+            "name": "Earth", 
+            "imageUrl": "https://www.google.com/search?biw=1279&bih=605&tbm=isch&sa=1&ei=MSS8WpS2AvCH_QbZsb3gBA&q=earth&oq=earth&gs_l=psy-ab.3..0i67k1l3j0l2j0i67k1l3j0j0i67k1.16784.16784.0.17614.1.1.0.0.0.0.92.92.1.1.0....0...1c.1.64.psy-ab..0.1.90....0.0msmehLDJCs#imgrc=70jkjnCHEZZr1M:",
+            "description": "Earth is special because it is an ocean planet..",
+            "isGasPlanet": false,
+            "numberOfMoons": 1
+        },
+        {
+            "name": "Mars", 
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1rnt0ORO0GO51vhU33lgaVkOE2RGzQVQ-lJRsEkE3iZPBTpqJ",
+            "description": "Mars is a cold desert world and is red because of rusty iron in the ground.",
+            "isGasPlanet": false,
+            "numberOfMoons": 2
+        },
+        {
+            "name": "Jupiter", 
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0RgDLG3TfmKAZs7MItfFoCNE9dKmIr6slarL3HSYV0gx5r4Gv",
+            "description": "If Jupiter had been about 80 times more massive, it would have become a star rather than a planet.",
+            "isGasPlanet": true,
+            "numberOfMoons": 67
+        },
+        {
+            "name": "Saturn", 
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSecEaDFDotquoI02d7uuaWSRZrxjK5w1oEibdsYZon4lQbkd77OA",
+            "description": "Saturn's yellow and gold bands are the result of super-fast winds in the upper atmosphere",
+            "isGasPlanet": "true",
+            "numberOfMoons": 60
+        },
+        {
+            "name": "Uranus", 
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg",
+            "description": "Uranus was long mistaken as a star because of the planet's dimness and slow orbit.",
+            "isGasPlanet": "true",
+            "numberOfMoons": 27
+        },
+        {
+            "name": "Neptune", 
+            "imageUrl": "data:image/jpeg;base64,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",
+            "description": "There are still mysteries about the cool, blue planet, such as why its winds are so speedy and why its magnetic field is offset.",
+            "isGasPlanet": "true",
+            "numberOfMoons": 14
+        }
+    ]
+}

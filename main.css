@@ -1,3 +1,18 @@
 body {
-    background-color: rgb(208, 168, 245);
+    background-color: rgb(3, 3, 63);
+    color: rgb(250, 250, 217);
+}
+
+#planets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.planet {
+    text-align: center;
+    border: 4px solid yellow;
+    margin: 2%;
+    padding: 2%;
+    width: 400px;
 }

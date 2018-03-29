@@ -5,7 +5,7 @@ const startApplication = () => {
     let myRequest = new XMLHttpRequest();
     myRequest.addEventListener("load", executeThisCodeAfterFileLoaded);
     myRequest.addEventListener("error", executeThisCodeIfXHRFails);
-    myRequest.open("GET", "animals.json");
+    myRequest.open("GET", "planets.json");
     myRequest.send();
 }
 // Write executeThisCodeIfXHRFails function that consoles that an error has occurred
@@ -27,9 +27,10 @@ const buildDomString = (array) => {
     printToDom(domString, "planets");
 }
 // write printToDom function that takes a string and an id and writes the string to the id
-const printToDom (domString, divId) => {
-    document.getElementById(divId).innerHTML = domstring;
+const printToDom = (domString, divId) => {
+    document.getElementById(divId).innerHTML = domString;
 }
+startApplication();
 
 
 

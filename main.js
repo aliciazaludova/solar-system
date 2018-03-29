@@ -22,7 +22,9 @@ function executeThisCodeAfterFileLoaded () {
 const buildDomString = (array) => {
     let domString = "";
     array.forEach((planet) => {
+        domString += `<div class="planet">`
         domString += `<h1>${planet.name}</h1>`;
+        domString += `</div>`;
     })
     printToDom(domString, "planets");
 }

@@ -22,8 +22,17 @@ function executeThisCodeAfterFileLoaded () {
 const buildDomString = (array) => {
     let domString = "";
     array.forEach((planet) => {
-        domString += `<div class="planet">`
+        domString += `<div class="planet-card">`
         domString += `<h1>${planet.name}</h1>`;
+        domString += `<img src="${planet.imgUrl}">`;
+        domString +=`<h4>${planet.description}</h4>`;
+        domString += `<h4>${planet.isGasPlanet}</h4>`;
+
+        if (`${planet.numberOfMoons}` === 0) {
+            domString += `<h4>${planet.name} doesn't have any moons.</h4>`;
+        } else if (`${planet.numberOfMoons}` === 1) {
+            domString += `<h4>${planet.name} has 1 moon.</h4>`;   
+        } else 
         domString += `</div>`;
     })
     printToDom(domString, "planets");
@@ -33,6 +42,10 @@ const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 }
 startApplication();
+
+// When the user moves their mouse over a planet card the name should disappear and the image of the planet should take up the whole card.
+
+// 
 
 
 

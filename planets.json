@@ -3,22 +3,22 @@
     [
         {
             "name": "Mercury", 
-            "imageUrl": "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2015/whatsimporta.jpg:",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg",
             "description": "Mercury has water ice and organics.",
             "isGasPlanet": false,
             "numberOfMoons": 0
         },
         {
             "name": "Venus", 
-            "imageUrl": "http://bryanmbrandenburg.com/wp-content/uploads/2013/01/planet-venus-by-bryan-brandenburg-900x900.jpg",
+            "imageUrl": "https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAwMC8xMjQvb3JpZ2luYWwvMDcxMTI3LXZlbnVzLXN1cmZhY2UtMDIuanBn",
             "description": "Venus is the hottest world in the solar system.",
             "isGasPlanet": false,
             "numberOfMoons": 0
         },
         {
             "name": "Earth", 
-            "imageUrl": "https://www.google.com/search?biw=1279&bih=605&tbm=isch&sa=1&ei=MSS8WpS2AvCH_QbZsb3gBA&q=earth&oq=earth&gs_l=psy-ab.3..0i67k1l3j0l2j0i67k1l3j0j0i67k1.16784.16784.0.17614.1.1.0.0.0.0.92.92.1.1.0....0...1c.1.64.psy-ab..0.1.90....0.0msmehLDJCs#imgrc=70jkjnCHEZZr1M:",
-            "description": "Earth is special because it is an ocean planet..",
+            "imageUrl": "https://vignette.wikia.nocookie.net/uncyclopedia/images/3/36/Earth.jpg/revision/latest?cb=20070107194906",
+            "description": "Earth is special because it is an ocean planet.",
             "isGasPlanet": false,
             "numberOfMoons": 1
         },

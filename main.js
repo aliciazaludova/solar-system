@@ -1,14 +1,11 @@
 console.log("space is cool");
 
-let data2 = [];
-
 // write printToDom function that takes a string and an id and writes the string to the id
 const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 }
 
 // Write buildDomString function that loops over input array and creates h1 tags with name and adds them to a big string then calls printToDom and passes string
-
 const buildDomString = (array) => {
     let domString = "";
     array.forEach((planet) => {
@@ -20,20 +17,25 @@ const buildDomString = (array) => {
         domString += `</div>`; 
     })
     printToDom(domString, "planets");
-    addEventListener();
+    addEventListeners();
 };
 
-// write function to hide and unhide the two "children" of the div "planet-card"--the name and the image
+// write functions to hide and unhide the two "children" of the div "planet-card"--the name and the image
 const mouseEnter = (e) => {
     e.target.children[1].classList.remove("hide");
     e.target.children[0].classList.add("hide");
 }
+const mouseLeave = (e) => {
+    e.target.children[0].classList.remove("hide");
+    e.target.children[1].classList.add("hide");
+}
 
 // write function for mouseover on planet card so name disappears and image appears
-const addEventListener = () => {
+const addEventListeners = () => {
     const cards = document.getElementsByClassName("planet-card");
     for(let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("mouseenter", mouseEnter);
+        cards[i].addEventListener("mouseleave", mouseLeave);
     }
 }
  
@@ -60,6 +62,7 @@ startApplication();
 
 // when the user moves their mouse over a planet card the name should disappear and the image of the planet should take up the whole card.
 
+// decided to use children of the div instead of the below:
 // we are going to be working with three items: planet cards, planet images and planet names
 // so it would follow that we need to create classes for each of their tags in the domString
 // const planetCards = document.getElementsByClassName("planet-card");

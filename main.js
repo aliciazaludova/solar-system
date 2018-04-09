@@ -1,3 +1,5 @@
+let data2 = [];
+
 console.log("space is cool");
 
 // write printToDom function that takes a string and an id and writes the string to the id
@@ -40,7 +42,12 @@ const domString2 = (onlyplanet) => {
 }
 
 const mouseClick = (e) => {
-
+    const planetName = e.target.parentNode.children[0];
+    data2.planets.forEach((planet) => {
+        if(planetName.innerHTML === planet.name) {
+            domString2(planet);
+        }
+    })
 }
 
 // write functions to hide and unhide the two "children" of the div "planet-card"--the name and the image
@@ -53,12 +60,23 @@ const mouseLeave = (e) => {
     e.target.children[1].classList.add("hide");
 }
 
-// write function for mouseover on planet card so name disappears and image appears
+const closeEvent = (e) => {
+    const x = document.getElementById("exit");
+        x.addEventListener('click', hideStuff);
+    }
+
+const hideStuff = (e) => {
+    e.target.parentNode.remove();
+    buildDomString(data2.planets);
+}
+
+// write function for mouse actions on planet card so name disappears and image appears
 const addEventListeners = () => {
     const cards = document.getElementsByClassName("planet-card");
     for(let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("mouseenter", mouseEnter);
         cards[i].addEventListener("mouseleave", mouseLeave);
+        cards[i].addEventListener("click", mouseClick);
     }
 }
  
@@ -67,8 +85,13 @@ function executeThisCodeIfXHRFails() {
     console.log("something broke");
 } 
 // Write executeThisCodeAfterFileLoaded function that parses xhr response and passes it to a buildDomString function
+// function executeThisCodeAfterFileLoaded () {
+//     const data = JSON.parse(this.responseText);
+//         buildDomString(data.planets);
+// }
 function executeThisCodeAfterFileLoaded () {
     const data = JSON.parse(this.responseText);
+    data2 = data;  // data2
         buildDomString(data.planets);
 }
 

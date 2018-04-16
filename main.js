@@ -22,19 +22,19 @@ const buildDomString = (array) => {
     addEventListeners();
 };
 
-const domString2 = (onlyplanet) => {
+const domString2 = (planet) => {
     let onlyCardString = "";
     onlyCardString += `<div class="only-card">`;
     onlyCardString += `<button id="close">Close</button>`;
     onlyCardString += `<h1 class="onlyName">${planet.name}</h1>`;
-    onlyCardString += `<img class="onlyImage" src="${planet.imageUrl}>`;
+    onlyCardString += `<img class="onlyImage" src="${planet.imageUrl}">`;
     if (planet.numberOfMoons === 0) {
-        domString += `<h4>${planet.name} doesn't have any moons.</h4>`;
+        onlyCardString += `<h4>${planet.name} doesn't have any moons.</h4>`;
     } else if (planet.numberOfMoons === 1) {
-        domString += `<h4>${planet.name} has 1 moon.</h4>`;
+        onlyCardString += `<h4>${planet.name} has 1 moon.</h4>`;
     } else {
         onlyCardString += `<h4>${planet.name} has ${planet.numberOfMoons} moons.</h4>`;
-        onlyCardString += `<h4>The largest one is ${planet.largestMoon}.`;
+        onlyCardString += `<h4>The largest one is ${planet.largestMoon}.</h4>`;
       }
     onlyCardString += `<p>${planet.description}</p>`;
     onlyCardString += `</div>`;

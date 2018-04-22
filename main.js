@@ -1,3 +1,5 @@
+// var to hold array needs to be created
+// this new array is ___________
 let data2 = [];
 
 console.log("space is cool");
@@ -7,15 +9,16 @@ const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 }
 
-// Write buildDomString function that loops over input array and creates h1 tags with name and adds them to a big string then calls printToDom and passes string
+// Write buildDomString function that loops over array of planets and creates h1 tags with name + shows each's image
+// += ensures that each is added to the empty string originally created
+// printToDom calls this accumulated string and prints it to the DOM, landing it in the div with the ID "planets"
+// event listeners must be attached here because clicking on the cards yields another domString of just one planet + more details
 const buildDomString = (array) => {
     let domString = "";
     array.forEach((planet) => {
         domString += `<div class="planet-card">`
         domString += `<h1 class="planet-names">${planet.name}</h1>`;
         domString += `<img class="hide" src="${planet.imageUrl}">`;
-        // domString +=`<h4 class="hide" >${planet.description}</h4>`;
-        // domString += `<h4 class="hide" >${planet.isGasPlanet}</h4>`;
         domString += `</div>`; 
     })
     printToDom(domString, "planets");
@@ -37,10 +40,14 @@ const domString2 = (planet) => {
         onlyCardString += `<h4>The largest one is ${planet.largestMoon}.</h4>`;
       }
     onlyCardString += `<p>${planet.description}</p>`;
+    onlyCardString +=`<p>${planet.isGasPlanet}</p>`;
     onlyCardString += `</div>`;
     printToDom(onlyCardString, "planets");
 }
 
+// the planet name is all that shows in the card (default display)
+// this click is not to be confused with closing the single planet card with the button
+// when you click on the name, this mouseClick function targets the __________. 
 const mouseClick = (e) => {
     const planetName = e.target.parentNode.children[0];
     data2.planets.forEach((planet) => {
@@ -50,7 +57,12 @@ const mouseClick = (e) => {
     })
 }
 
+// in these functions the mouseEnter, mouseLeave are defined
 // write functions to hide and unhide the two "children" of the div "planet-card"--the name and the image
+// classList.add/remove seems to be a built-in method
+// what is removed or added is the class "hide"
+// so on mouse entry, to the first child (index 0 which is planet.name) the class of hide is added
+// also on mouse entry, simultaneously, to the second child of "parent-card", which is planet.imageUrl, the class of "hide" is removed, therefore showing this second child 
 const mouseEnter = (e) => {
     e.target.children[1].classList.remove("hide");
     e.target.children[0].classList.add("hide");
@@ -61,8 +73,8 @@ const mouseLeave = (e) => {
 }
 
 const closeEvent = (e) => {
-    const x = document.getElementById("exit");
-        x.addEventListener('click', hideStuff);
+    const closeBtn = document.getElementById("close");
+    closeBtn.addEventListener('click', hideStuff);
     }
 
 const hideStuff = (e) => {
@@ -106,14 +118,6 @@ const startApplication = () => {
 
 startApplication();
 
-// when the user moves their mouse over a planet card the name should disappear and the image of the planet should take up the whole card.
-
-// decided to use children of the div instead of the below:
-// we are going to be working with three items: planet cards, planet images and planet names
-// so it would follow that we need to create classes for each of their tags in the domString
-// const planetCards = document.getElementsByClassName("planet-card");
-// const planetImages = document.getElementsByClassName("planet-images");
-// const planetNames = document.getElementsByClassName("planet-names");
 
 
 

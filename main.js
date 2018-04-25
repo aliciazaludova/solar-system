@@ -28,7 +28,7 @@ const buildDomString = (array) => {
 const domString2 = (planet) => {
     let onlyCardString = "";
     onlyCardString += `<div class="only-card">`;
-    onlyCardString += `<button id="close">Close</button>`;
+    onlyCardString += `<button id="x">X</button>`;
     onlyCardString += `<h1 class="onlyName">${planet.name}</h1>`;
     onlyCardString += `<img class="onlyImage" src="${planet.imageUrl}">`;
     if (planet.numberOfMoons === 0) {
@@ -43,15 +43,18 @@ const domString2 = (planet) => {
     onlyCardString +=`<p>${planet.isGasPlanet}</p>`;
     onlyCardString += `</div>`;
     printToDom(onlyCardString, "planets");
+    attachCloseEvent();
 }
 
 // the planet name is all that shows in the card (default display)
 // this click is not to be confused with closing the single planet card with the button
 // when you click on the name, this mouseClick function targets the __________. 
 const mouseClick = (e) => {
-    const planetName = e.target.parentNode.children[0];
+    // 
+    const planetName = e.target.parentNode.children[0].innerHTML;
+    console.log(planetName);
     data2.planets.forEach((planet) => {
-        if(planetName.innerHTML === planet.name) {
+        if(planetName === planet.name) {
             domString2(planet);
         }
     })
@@ -72,12 +75,14 @@ const mouseLeave = (e) => {
     e.target.children[1].classList.add("hide");
 }
 
-const closeEvent = (e) => {
-    const closeBtn = document.getElementById("close");
-    closeBtn.addEventListener('click', hideStuff);
+const attachCloseEvent = () => {
+    const x = document.getElementById("x");
+    x.addEventListener('click', hideStuff);
     }
 
+// is the parentNode this removes "only-card"? the whole div?
 const hideStuff = (e) => {
+    console.log('hideStuff', 'e', e);
     e.target.parentNode.remove();
     buildDomString(data2.planets);
 }

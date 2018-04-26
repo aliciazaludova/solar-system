@@ -48,7 +48,7 @@ const domString2 = (planet) => {
 
 // the planet name is all that shows in the card (default display)
 // this click is not to be confused with closing the single planet card with the button
-// when you click on the name, this mouseClick function targets the __________. 
+// the parentNode is the "parent-card" and the children are the h1 and the image. i have only the first child index 0 coded here. 
 const mouseClick = (e) => {
     // 
     const planetName = e.target.parentNode.children[0].innerHTML;
@@ -80,7 +80,7 @@ const attachCloseEvent = () => {
     x.addEventListener('click', hideStuff);
     }
 
-// is the parentNode this removes "only-card"? the whole div?
+// the parent node is the 
 const hideStuff = (e) => {
     console.log('hideStuff', 'e', e);
     e.target.parentNode.remove();

@@ -26,6 +26,10 @@ h1 {
     font-weight: 900;
 }
 
+#search-bar {
+    text-align: center;
+}
+
 img {
     width: 100%;
     border-radius: 15px;

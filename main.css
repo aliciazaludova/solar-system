@@ -1,6 +1,9 @@
 body {
-    background-color: rgb(3, 3, 63);
+    background-image: url(https://data.whicdn.com/images/247997719/original.gif);
     color: rgb(250, 250, 217);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif;
 }
 
 #planets {
@@ -12,22 +15,37 @@ body {
 .planet-card {
     text-align: center;
     border: 4px solid yellow;
+    border-radius: 15px;
     margin: 2%;
     padding: 2%;
     width: 400px;
 }
 
+h1 { 
+    text-shadow: 5px 5px 5px rgb(95, 216, 247);
+    font-weight: 900;
+}
+
 img {
     width: 100%;
+    border-radius: 15px;
+    border: 2px solid rgb(95, 216, 247);
 }
 
 .hide {
     display: none;
 }
 
-#exit {
+#x {
     position: absolute;
     top: 0;
     right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
     color: red;
+    font-size: 2em;
+    font-weight: 900;
+    border: 2px solid rgb(95, 216, 247);
+    border-radius: 15px;
+    background-color: yellow;
 }

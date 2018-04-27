@@ -9,6 +9,45 @@ const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML = domString;
 }
 
+const searchEvent = (planets) => {
+    let getSearchInput = document.getElementById('search-planets');
+    // the element with the 'search-planets' ID now listens for 'input' or 'keypress'? and then an event (e) is set into motion
+    // addEventListener takes a condition (keypress) and a function (e) -- when you hear a keypress event do this function described
+    // js is my secretary. there is a report. when a letter key is pressed send me a report about this event (e)
+    getSearchInput.addEventListener('keypress', (e) => {
+      // the e is an object and target is a property of it. target is a specific property that targets the input field
+      let searchValue = e.target.toLowerCase();
+      // split would arrange the array values  such as "Does Saturn have moons?" to "Does,Saturn,Have,Moons?". each is now a substring to be matched to words on the DOM
+      let splitSearchWords = searchValue.split(' '); // it splits it into words when a space is betw quotes
+      // want to console log here but no search terms entered to see?
+      // empty array to push searched words matched with words in content of planets.json?
+      let outputArray = [];
+      // loop through planets in json and through splitSearchWords (what user typed into search field)
+      for(let i = 0; i < planets.length; i++) {
+        for(let j= 0; j < splitSearchWords.length; j++) {
+            // if the name of any planet object (also made lower case) includes any of the search words that have been lower-cased and split, AND are not already in the output array then push the planet name that matches any of the searched words to the outputArray
+            if(planets[i].name.toLowerCase().includes(splitSearchWords[j]) && !outputArray.includes(i)){
+                outputArray.push(planets[i]);
+            }
+            // if any of the words in the description of any of the planets, once made lower case, include any of the words entered in search (split and lower-cased) AND are not already in the outputArray then push the words to the outputArray
+            else if (planets[i].description.toLowerCase().includes(splitSearchWords[j]) && !outputArray.includes(i)){
+                outputArray.push(planets[i]);
+            }
+          }
+        };
+        // the comparison stuff above ends now and then we run buildDomString
+        buildDomString(outputArray);  // do the buildDomString but do it differently, with outputArray
+});
+
+// create a var to hold the input the user types into input field. 'search-planets is the ID of the form element
+// querySelector is used because we are identifying it by the tag 'input'
+// = document.forms['search-planets'].querySelector('input');
+// console.log(searchBar);
+// searchBar.addEventListener('keyup', (e) => {
+//     // grab the search term the user entered and convert to lower case
+//     const term = e.target.value.toLowerCase()
+// })
+
 // Write buildDomString function that loops over array of planets and creates h1 tags with name + shows each's image
 // += ensures that each is added to the empty string originally created
 // printToDom calls this accumulated string and prints it to the DOM, landing it in the div with the ID "planets"
@@ -122,14 +161,3 @@ const startApplication = () => {
 }
 
 startApplication();
-
-
-
-
-
-
-
-
-
-
-
